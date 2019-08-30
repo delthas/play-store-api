@@ -39,12 +39,11 @@ public class GooglePlayAPITest {
         Assert.assertEquals(1, requestAuthAc2dm.url().pathSegments().size());
         Assert.assertEquals("auth", requestAuthAc2dm.url().pathSegments().get(0));
         Map<String, String> vars = MockOkHttpClientAdapter.parseQueryString(MockOkHttpClientAdapter.getBodyBytes(requestAuthAc2dm));
-        Assert.assertEquals(14, vars.size());
+        Assert.assertEquals(13, vars.size());
         Assert.assertEquals("konstantin.razdolbaev@gmail.com", vars.get("Email"));
         Assert.assertEquals("TemporaryPassword!", vars.get("Passwd"));
         Assert.assertEquals("us", vars.get("device_country"));
         Assert.assertEquals("en", vars.get("lang"));
-        Assert.assertEquals("22", vars.get("sdk_version"));
         Assert.assertEquals("ac2dm", vars.get("service"));
         Assert.assertEquals("1", vars.get("add_account"));
 
@@ -86,12 +85,11 @@ public class GooglePlayAPITest {
         Assert.assertEquals(1, request.url().pathSegments().size());
         Assert.assertEquals("auth", request.url().pathSegments().get(0));
         Map<String, String> vars = MockOkHttpClientAdapter.parseQueryString(MockOkHttpClientAdapter.getBodyBytes(request));
-        Assert.assertEquals(13, vars.size());
+        Assert.assertEquals(12, vars.size());
         Assert.assertEquals("konstantin.razdolbaev@gmail.com", vars.get("Email"));
         Assert.assertEquals("TemporaryPassword!", vars.get("Passwd"));
         Assert.assertEquals("us", vars.get("device_country"));
         Assert.assertEquals("en", vars.get("lang"));
-        Assert.assertEquals("22", vars.get("sdk_version"));
         Assert.assertEquals("androidmarket", vars.get("service"));
         Assert.assertEquals("com.android.vending", vars.get("app"));
     }
